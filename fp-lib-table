@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name NessieSoup)(type KiCad)(uri ${KIPRJMOD}/NessieSoup.pretty)(options "")(descr ""))
+)
