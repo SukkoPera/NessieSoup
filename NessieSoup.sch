@@ -4,12 +4,12 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
-Comment2 ""
+Title "NessieSoup"
+Date "2024-07-08"
+Rev "1git"
+Comp "SukkoPera"
+Comment1 "Licensed under CC BY-NC-SA 4.0"
+Comment2 "https://github.com/SukkoPera/NessieSoup"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -197,10 +197,6 @@ Wire Wire Line
 Wire Wire Line
 	2075 2285 1670 2285
 Wire Wire Line
-	2075 2385 1670 2385
-Wire Wire Line
-	2075 2485 1670 2485
-Wire Wire Line
 	3575 1985 3980 1985
 Wire Wire Line
 	3575 2385 3980 2385
@@ -213,9 +209,9 @@ clock
 Text Label 8500 2095 2    50   ~ 0
 latch
 Text Label 8500 2195 2    50   ~ 0
-data1
-Text Notes 8580 2325 0    50   ~ 0
-MULTITAP
+port1_d0
+Text Notes 10080 2390 0    50   ~ 0
+These 2 signals make\nMultiTap support possible
 Text Notes 7965 1995 0    50   ~ 0
 cup
 Text Notes 7965 2095 0    50   ~ 0
@@ -242,13 +238,13 @@ NoConn ~ 7340 2195
 NoConn ~ 7340 2295
 NoConn ~ 7340 2395
 Text Label 3980 2685 2    50   ~ 0
-data1
+port1_d0
 Text Label 3980 2385 2    50   ~ 0
 clock
 Text Label 3980 2585 2    50   ~ 0
 latch
 Text Label 3980 1985 2    50   ~ 0
-data2
+port2_d0
 Wire Wire Line
 	9360 1995 10005 1995
 Wire Wire Line
@@ -311,7 +307,7 @@ clock
 Text Label 10005 2095 2    50   ~ 0
 latch
 Text Label 10005 2195 2    50   ~ 0
-data2
+port2_d0
 Text Notes 9470 1995 0    50   ~ 0
 cup
 Text Notes 9470 2095 0    50   ~ 0
@@ -333,6 +329,62 @@ F 1 "PLUS4_USERPORT" H 2825 3259 50  0000 C CNN
 F 2 "NessieSoup:UserPortFemale" H 2825 2435 50  0001 C CNN
 F 3 "DOCUMENTATION" H 2825 2435 50  0001 C CNN
 	1    2825 2435
+	1    0    0    -1  
+$EndComp
+Text Label 10005 2295 2    50   ~ 0
+port2_d1
+NoConn ~ 2075 2085
+NoConn ~ 8500 2295
+NoConn ~ 8500 2395
+Text Label 10005 2395 2    50   ~ 0
+port2_pp
+Wire Notes Line
+	9665 2215 10040 2215
+Wire Notes Line
+	10040 2215 10040 2440
+Wire Notes Line
+	10040 2440 9665 2440
+Wire Notes Line
+	9665 2440 9665 2215
+Text Notes 7655 1560 0    50   ~ 0
+This port is compatible\nwith the Attack of the\nPETSCII Robots adapter
+Text Label 1670 2185 0    50   ~ 0
+port2_d1
+Text Label 1670 2285 0    50   ~ 0
+port2_pp
+NoConn ~ 2075 2385
+NoConn ~ 2075 2485
+$Comp
+L void:Void V0
+U 1 1 668D5315
+P 10705 5985
+F 0 "V0" H 10783 6031 50  0000 L CNN
+F 1 "LICENSE" H 10783 5940 50  0000 L CNN
+F 2 "NessieSoup:cc_by_nc_sa_small" H 10705 5985 50  0001 C CNN
+F 3 "" H 10705 5985 50  0001 C CNN
+	1    10705 5985
+	1    0    0    -1  
+$EndComp
+$Comp
+L void:Void V1
+U 1 1 668D668E
+P 10705 6170
+F 0 "V1" H 10783 6216 50  0000 L CNN
+F 1 "LOGO1" H 10783 6125 50  0000 L CNN
+F 2 "NessieSoup:Logo1" H 10705 6170 50  0001 C CNN
+F 3 "" H 10705 6170 50  0001 C CNN
+	1    10705 6170
+	1    0    0    -1  
+$EndComp
+$Comp
+L void:Void V2
+U 1 1 668D6AB2
+P 10705 6350
+F 0 "V2" H 10783 6396 50  0000 L CNN
+F 1 "LOGO2" H 10783 6305 50  0000 L CNN
+F 2 "NessieSoup:Logo2" H 10705 6350 50  0001 C CNN
+F 3 "" H 10705 6350 50  0001 C CNN
+	1    10705 6350
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
