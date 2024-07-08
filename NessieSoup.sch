@@ -62,8 +62,8 @@ L Connector:Conn_01x07_Female J?
 U 1 1 668DE1D4
 P 6495 2195
 AR Path="/668C296F/668DE1D4" Ref="J?"  Part="1" 
-AR Path="/668DE1D4" Ref="J1"  Part="1" 
-F 0 "J1" H 6390 1670 50  0000 C CNN
+AR Path="/668DE1D4" Ref="CN99"  Part="1" 
+F 0 "CN99" H 6390 1670 50  0000 C CNN
 F 1 "CONN_NES" H 6445 1760 50  0000 C CNN
 F 2 "" H 6495 2195 50  0001 C CNN
 F 3 "~" H 6495 2195 50  0001 C CNN
@@ -385,6 +385,49 @@ F 1 "LOGO2" H 10783 6305 50  0000 L CNN
 F 2 "NessieSoup:Logo2" H 10705 6350 50  0001 C CNN
 F 3 "" H 10705 6350 50  0001 C CNN
 	1    10705 6350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C1
+U 1 1 668DE5DF
+P 7350 3625
+F 0 "C1" H 7465 3671 50  0000 L CNN
+F 1 "47u" H 7465 3580 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 7350 3625 50  0001 C CNN
+F 3 "~" H 7350 3625 50  0001 C CNN
+	1    7350 3625
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 668DF315
+P 7350 3910
+AR Path="/668C296F/668DF315" Ref="#PWR?"  Part="1" 
+AR Path="/668DF315" Ref="#PWR0110"  Part="1" 
+F 0 "#PWR0110" H 7350 3660 50  0001 C CNN
+F 1 "GND" H 7355 3737 50  0000 C CNN
+F 2 "" H 7350 3910 50  0001 C CNN
+F 3 "" H 7350 3910 50  0001 C CNN
+	1    7350 3910
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7350 3775 7350 3910
+Text Notes 6470 1555 0    50   ~ 0
+Currently unused, but\nif we ever want to make\na NES version, this is\nthe pinout to be used
+Wire Wire Line
+	7350 3475 7350 3365
+$Comp
+L power:+5V #PWR?
+U 1 1 668E102F
+P 7350 3365
+AR Path="/668C296F/668E102F" Ref="#PWR?"  Part="1" 
+AR Path="/668E102F" Ref="#PWR0111"  Part="1" 
+F 0 "#PWR0111" H 7350 3215 50  0001 C CNN
+F 1 "+5V" H 7365 3538 50  0000 C CNN
+F 2 "" H 7350 3365 50  0001 C CNN
+F 3 "" H 7350 3365 50  0001 C CNN
+	1    7350 3365
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
