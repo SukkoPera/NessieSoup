@@ -142,7 +142,6 @@ NoConn ~ 2075 2785
 NoConn ~ 2075 2885
 NoConn ~ 3575 2785
 NoConn ~ 3575 2885
-NoConn ~ 3575 2085
 NoConn ~ 3575 2185
 NoConn ~ 3575 2285
 NoConn ~ 3575 2485
@@ -197,8 +196,6 @@ Wire Wire Line
 Wire Wire Line
 	2075 2285 1670 2285
 Wire Wire Line
-	3575 1985 3980 1985
-Wire Wire Line
 	3575 2385 3980 2385
 Wire Wire Line
 	3575 2585 3980 2585
@@ -243,7 +240,7 @@ Text Label 3980 2385 2    50   ~ 0
 clock
 Text Label 3980 2585 2    50   ~ 0
 latch
-Text Label 3980 1985 2    50   ~ 0
+Text Label 4260 1730 2    50   ~ 0
 port2_d0
 Wire Wire Line
 	9360 1995 10005 1995
@@ -430,4 +427,35 @@ F 3 "" H 7350 3365 50  0001 C CNN
 	1    7350 3365
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector:Conn_01x03_Male JP1
+U 1 1 668DD29D
+P 3770 1730
+F 0 "JP1" H 3878 2011 50  0000 C CNN
+F 1 "JMP_16_64" H 3878 1920 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 3770 1730 50  0001 C CNN
+F 3 "~" H 3770 1730 50  0001 C CNN
+	1    3770 1730
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3970 1730 4260 1730
+Wire Wire Line
+	3970 1830 4030 1830
+Wire Wire Line
+	4030 1830 4030 1985
+Wire Wire Line
+	3575 1985 4030 1985
+Text Notes 3635 1825 0    50   ~ 0
++4
+Text Notes 3600 1715 0    50   ~ 0
+C64
+Text Notes 2745 2120 0    50   ~ 0
+C64 PB0
+Wire Wire Line
+	3970 1630 4345 1630
+Wire Wire Line
+	4345 1630 4345 2085
+Wire Wire Line
+	4345 2085 3575 2085
 $EndSCHEMATC
