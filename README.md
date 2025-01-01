@@ -1,5 +1,5 @@
 # NessieSoup
-NessieSoup is a simple board that allows connecting Super Nintendo controllers to a Commodore 64, 128 or Plus/4.
+NessieSoup is a simple adapter that allows connecting Super Nintendo controllers to a Commodore 64, 128 or Plus/4.
 
 ![Board](https://raw.githubusercontent.com/SukkoPera/NessieSoup/master/img/render-top.png)
 
@@ -18,7 +18,7 @@ Get the SNES and userport connectors on AliExpress & similar sites.
 The capacitor is optional.
 
 ## Programming
-The board is completely passive, so it's all down to the software. This means you should first of all get familiar with the SNES controller protocol, then the following will start to make sense:
+The board is completely passive, so it's all down to the software. This means you should first of all get familiar with the [SNES controller protocol](https://github.com/SukkoPera/NessieSoup/wiki/Super-Nintendo-Entertainment-System:-Pinouts-&-Protocol), then the following will start to make sense:
 
 |Signal     |Userport Pin +4|Userport Pin C64/128|Userport Pin VIC-20|Userport Pin PET|
 |-----------|---------------|--------------------|-------------------|----------------|
@@ -31,7 +31,7 @@ The board is completely passive, so it's all down to the software. This means yo
 
 *NOTE: The adapter has only been tested on the +4 and C64, pinouts for other computers is only provided as a reference, use at your own risk.*
 
-Note that JP1 must be set to **+4** only when the board is connected to a +4 computer, use the **C64** position in all other cases.
+Note that JP1 must be set to **+4** only when the board is connected to a +4, C16 or C116 computer, use the **C64** position in all other cases.
 
 Some example code for controller detection and polling is provided on the [Wiki](https://github.com/SukkoPera/NessieSoup/wiki).
 
@@ -50,7 +50,7 @@ This documentation is distributed *as is* and WITHOUT ANY EXPRESS OR IMPLIED WAR
 ## Support the Project
 If you want to get some boards manufactured, you can get them from PCBWay through this link:
 
-[![PCB from PCBWay](https://www.pcbway.com/project/img/images/frompcbway.png)](https://www.pcbway.com/project/shareproject/NessieSoup_I2C_Bus_Interface_for_the_Commodore_16_116_4_30c73687.html)
+[![PCB from PCBWay](https://www.pcbway.com/project/img/images/frompcbway.png)](https://www.pcbway.com/project/shareproject/NessieSoup_Super_Nintendo_Controller_Adapter_for_the_Commodore_64_VIC_20_and_8b1f1d4c.html)
 
 You get my gratitude and cheap, professionally-made and good quality PCBs, I get some credit that will help with this and [other projects](https://www.pcbway.com/project/member/shareproject/?bmbid=41100). You won't even have to worry about the various PCB options, it's all pre-configured for you!
 
