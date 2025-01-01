@@ -4,7 +4,9 @@ NessieSoup is a simple board that allows connecting Super Nintendo controllers t
 ![Board](https://raw.githubusercontent.com/SukkoPera/NessieSoup/master/img/render-top.png)
 
 ## Summary
+The game [Attack of the PETSCII Robots](https://www.the8bitguy.com/product/petscii-robots/) by The 8-Bit Guy supports SNES controllers when running on the C64, VIC-20, Plus/4, and PET with a custom adapter. While I didn't have the game (nor the adapter), I was able to figure out how it works and I noticed that it could easily be expanded to support more than one controller and advanced peripherals, such as the *SNES MultiTap* and (possibly) the *Super Scope*.
 
+So I designed a new PCB with 2 controllers ports: the first port is designed to be fully compatible with the original adapter (which means it should work with PETSCII Robots, but I was unable to test it), while the second one supports either a second controller or the more advanced peripherals.
 
 ## Assembly
 Get the SNES and userport connectors on AliExpress & similar sites.
@@ -14,16 +16,22 @@ The capacitor is optional.
 ## Programming
 The board is completely passive, so it's all down to the software. This means you should first of all get familiar with the SNES controller protocol, then the following will start to make sense:
 
-|Signal     |Userport Pin +4|Userport Pin C64/128|
-|-----------|---------------|--------------------|
-|Latch      |J/D6           |J/PB5               |
-|Clock      |F/D7           |F/PB3               |
-|D0 (Port 1)|K/D1           |K/PB6               |
-|D0 (Port 2)|B/D0           |C/PB0               |
-|D1 (Port 2)|4/D2           |                    |
-|PP (Port 2)|5/D3           |                    |
+|Signal     |Userport Pin +4|Userport Pin C64/128|Userport Pin VIC20|Userport Pin PET|
+|-----------|---------------|--------------------|------------------|----------------|
+|Latch      |J/D6           |J/PB5               |J/PB5             |J/PA5           |
+|Clock      |F/D7           |F/PB3               |F/PB3             |F/PA3           |
+|D0 (Port 1)|K/D1           |K/PB6               |K/PB6             |K/PA6           |
+|D0 (Port 2)|B/D0           |C/PB0               |C/PB0             |C/PB0           |
+|D1 (Port 2)|4/D2           |                    |                  |                |
+|PP (Port 2)|5/D3           |                    |                  |                |
+
+*NOTE: The adapter has only been tested on the +4 and C64, pinouts for other computers is only provided as a reference, use at your own risk.*
+
+Note that JP1 must be set to **+4** only when the board is connected to a +4 computer, use the **C64** position in all other cases.
 
 Some example code for controller detection and polling is provided on the [Wiki](https://github.com/SukkoPera/NessieSoup/wiki).
+
+Code for reading the SNES MultiTap and the Super Scope has not been developed yet, feel free to contribute ;).
 
 ## Releases
 If you want to get this board produced, you are recommended to get [the latest release](https://github.com/SukkoPera/NessieSoup/releases) rather than the current git version, as the latter might be under development and is not guaranteed to be working.
