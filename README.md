@@ -4,9 +4,13 @@ NessieSoup is a simple board that allows connecting Super Nintendo controllers t
 ![Board](https://raw.githubusercontent.com/SukkoPera/NessieSoup/master/img/render-top.png)
 
 ## Summary
-The game [Attack of the PETSCII Robots](https://www.the8bitguy.com/product/petscii-robots/) by The 8-Bit Guy supports SNES controllers when running on the C64, VIC-20, Plus/4, and PET with a custom adapter. While I didn't have the game (nor the adapter), I was able to figure out how it works and I noticed that it could easily be expanded to support more than one controller and advanced peripherals, such as the *SNES MultiTap* and (possibly) the *Super Scope*.
+The game [Attack of the PETSCII Robots](https://www.the8bitguy.com/product/petscii-robots/) by The 8-Bit Guy supports SNES controllers when running on the C64, VIC-20, Plus/4, and PET with a custom adapter. While I didn't have the game (nor the adapter), I was able to figure out how it works and I noticed that it could easily be expanded to support more than one controller and advanced peripherals, such as the *SNES MultiTap* and (possibly) the [Super Scope](https://en.wikipedia.org/wiki/Super_Scope).
 
 So I designed a new PCB with 2 controllers ports: the first port is designed to be fully compatible with the original adapter (which means it should work with PETSCII Robots, but I was unable to test it), while the second one supports either a second controller or the more advanced peripherals.
+
+The project also has the purpose of openly documenting this adapter, so that more games can be developed with support for SNES controllers (and all their buttons!).
+
+The board plugs in the User Port, which means that it can also be used on a C16 or C116 through [a User Port card](https://github.com/SukkoPera/16up).
 
 ## Assembly
 Get the SNES and userport connectors on AliExpress & similar sites.
@@ -16,14 +20,14 @@ The capacitor is optional.
 ## Programming
 The board is completely passive, so it's all down to the software. This means you should first of all get familiar with the SNES controller protocol, then the following will start to make sense:
 
-|Signal     |Userport Pin +4|Userport Pin C64/128|Userport Pin VIC20|Userport Pin PET|
-|-----------|---------------|--------------------|------------------|----------------|
-|Latch      |J/D6           |J/PB5               |J/PB5             |J/PA5           |
-|Clock      |F/D7           |F/PB3               |F/PB3             |F/PA3           |
-|D0 (Port 1)|K/D1           |K/PB6               |K/PB6             |K/PA6           |
-|D0 (Port 2)|B/D0           |C/PB0               |C/PB0             |C/PB0           |
-|D1 (Port 2)|4/D2           |                    |                  |                |
-|PP (Port 2)|5/D3           |                    |                  |                |
+|Signal     |Userport Pin +4|Userport Pin C64/128|Userport Pin VIC-20|Userport Pin PET|
+|-----------|---------------|--------------------|-------------------|----------------|
+|Latch      |J/D6           |J/PB5               |J/PB5              |J/PA5           |
+|Clock      |F/D7           |F/PB3               |F/PB3              |F/PA3           |
+|D0 (Port 1)|K/D1           |K/PB6               |K/PB6              |K/PA6           |
+|D0 (Port 2)|B/D0           |C/PB0               |C/PB0              |C/PB0           |
+|D1 (Port 2)|4/D2           |                    |                   |                |
+|PP (Port 2)|5/D3           |                    |                   |                |
 
 *NOTE: The adapter has only been tested on the +4 and C64, pinouts for other computers is only provided as a reference, use at your own risk.*
 
